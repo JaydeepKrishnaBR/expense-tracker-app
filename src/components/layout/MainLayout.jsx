@@ -1,22 +1,25 @@
 import { Box } from "@mui/material";
 import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
 
-const MainLayout = ({ children }) => {
+const MainLayout = () => {
+  console.log("✅ MainLayout rendered");
+
   return (
     <Box sx={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
+      {/* Content */}
       <Box
         sx={{
           flexGrow: 1,
           p: 3,
-          overflow: "auto",
-          backgroundColor: "#545454",
+          backgroundColor: "#ffffff",
         }}
       >
-        {children}
+        {console.log("📦 Rendering Outlet")}
+        <Outlet />
       </Box>
     </Box>
   );

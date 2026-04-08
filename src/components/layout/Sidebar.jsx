@@ -1,13 +1,5 @@
-import {
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  Toolbar,
-} from "@mui/material";
+import { Box, List, ListItemButton, ListItemText } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
-
-const drawerWidth = 240;
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -21,18 +13,14 @@ const Sidebar = () => {
   ];
 
   return (
-    <Drawer
-      variant="permanent"
+    <Box
       sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        [`& .MuiDrawer-paper`]: {
-          width: drawerWidth,
-          boxSizing: "border-box",
-        },
+        width: 240,
+        height: "100vh",
+        backgroundColor: "#ffffff",
+        borderRight: "1px solid #e4e4e4",
       }}
     >
-      <Toolbar /> {/* spacing */}
       <List>
         {menuItems.map((item) => (
           <ListItemButton
@@ -44,7 +32,7 @@ const Sidebar = () => {
           </ListItemButton>
         ))}
       </List>
-    </Drawer>
+    </Box>
   );
 };
 
